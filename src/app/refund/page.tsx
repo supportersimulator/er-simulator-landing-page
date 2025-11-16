@@ -16,66 +16,49 @@ export default function RefundPage() {
 
           <p className="mt-6 text-sm text-slate-300">
             ER Simulator is provided by{" "}
-            <strong>Tjomsland LLC dba ER Simulator</strong>. We want you to have
-            a fair and transparent experience. This policy describes how refunds
-            are handled for purchases of ER Simulator.
+            <strong>Tjomsland LLC dba ER Simulator</strong>. We want all users
+            to feel confident in their purchase. This Refund Policy explains how
+            refunds are handled for purchases made through our website.
           </p>
 
           <h2 className="mt-6 text-base font-semibold text-slate-50">
-            1. Subscription cancellations
+            1. Unconditional Refund Guarantee
           </h2>
           <p className="mt-2">
-            You may cancel your subscription at any time. When you cancel, you
-            will retain access to the Service until the end of your current
-            billing period. Future renewals will not be charged.
+            We offer a full, unconditional refund within 30 days of purchase. 
+            If you are not satisfied for any reason, you may request a refund 
+            and we will return the full purchase amount — no questions asked.
           </p>
 
           <h2 className="mt-4 text-base font-semibold text-slate-50">
-            2. Refunds
+            2. How refunds are processed
           </h2>
           <p className="mt-2">
-            Because ER Simulator is a digital subscription service, refunds are
-            generally not provided for partial billing periods or unused time.
-            However, we understand that situations happen. If you believe
-            you&apos;ve been charged in error or have not been able to use the
-            Service due to a technical issue, please contact us within 14 days
-            of the charge and we will review your request.
+            Purchases made through Paddle (our payment provider and Merchant of 
+            Record) will have refunds processed directly through Paddle. All 
+            refunds are issued back to the original payment method.
           </p>
 
           <h2 className="mt-4 text-base font-semibold text-slate-50">
-            3. Where refunds are processed
+            3. How to request a refund
           </h2>
           <p className="mt-2">
-            If you purchased through Paddle or another payment provider,
-            applicable refund rules of that provider or app store may also
-            apply. In some cases, refunds must be handled directly through the
-            app store.
-          </p>
-
-          <h2 className="mt-4 text-base font-semibold text-slate-50">
-            4. How to request a refund review
-          </h2>
-          <p className="mt-2">
-            To request a refund review, email us at{" "}
+            To request a refund at any time within 30 days of purchase, email us at{" "}
             <a
               href="mailto:support@ersimulator.com"
               className="text-emerald-400 hover:underline"
             >
               support@ersimulator.com
-            </a>{" "}
-            with:
+            </a>
+            .
           </p>
           <ul className="mt-2 list-disc pl-5 space-y-1">
-            <li>The email address associated with your account</li>
-            <li>The date and amount of the charge</li>
-            <li>
-              A brief explanation of the issue (for example: technical problem,
-              duplicate charge, or mistaken purchase)
-            </li>
+            <li>The email address used at checkout</li>
+            <li>The date of your purchase</li>
           </ul>
 
           <p className="mt-4">
-            We aim to respond to refund review requests within 7 business days.
+            Refunds are typically processed within 3–7 business days after the request.
           </p>
         </section>
       </main>
