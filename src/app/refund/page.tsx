@@ -20,6 +20,11 @@ export default function RefundPage() {
             to feel confident in their purchase. This Refund Policy explains how
             refunds are handled for purchases made through our website.
           </p>
+          <p className="mt-3 text-xs text-slate-500">
+            The Service is an educational simulation tool for licensed clinicians and does
+            not replace formal medical education, legal counsel, or local protocols. Real
+            patient care decisions must follow your governing associations and supervising teams.
+          </p>
 
           <h2 className="mt-6 text-base font-semibold text-slate-50">
             1. Unconditional Refund Guarantee

@@ -17,6 +17,23 @@ export default function TermsPage() {
         </p>
 
         <section className="space-y-4">
+          <h2 className="text-2xl font-semibold text-white">0. Educational Use Only</h2>
+          <p>
+            ER Simulator is an educational simulation tool intended solely for licensed or
+            credentialed clinicians to rehearse decision-making in fictional scenarios. It is
+            not a medical device, does not provide medical, legal, or billing advice, and must
+            never be used to diagnose, treat, or manage real patients.
+          </p>
+          <p>
+            By using ER Simulator you agree to follow your formal medical education, residency,
+            CME requirements, governing associations (e.g., AMA, ACEP, NCCPA, AANP, ANCC),
+            supervising physicians, and local hospital/EMS protocols before applying any concept
+            from this service to clinical practice. You remain solely responsible for all real
+            patient care decisions within your scope of practice.
+          </p>
+        </section>
+
+        <section className="space-y-4">
           <h2 className="text-2xl font-semibold text-white">1. Overview</h2>
           <p>
             ER Simulator provides AI-powered emergency medicine training
@@ -33,6 +50,11 @@ export default function TermsPage() {
             AI. It is not medical advice and must not be used to make clinical
             decisions. All medical questions should be directed to appropriate
             licensed professionals.
+          </p>
+          <p>
+            We provide no legal, regulatory, or credentialing advice. For questions about scope
+            of practice, licensing, billing, documentation, or compliance, consult your hospital,
+            legal counsel, or the appropriate regulatory body in your jurisdiction.
           </p>
         </section>
 
@@ -60,6 +82,11 @@ export default function TermsPage() {
             You receive a limited, non-exclusive, non-transferable license to use
             ER Simulator. You may not copy, resell, misuse, or use the service to
             make medical decisions.
+          </p>
+          <p>
+            You agree not to use ER Simulator to establish “standard of care,” provide real-time
+            telehealth, or supplant formal education. Use it the way you would use board-review
+            questions or FOAMed blog posts: to encourage study, not as an authority.
           </p>
         </section>
 

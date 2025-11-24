@@ -16,6 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-screen bg-slate-950 text-slate-50 antialiased">
+        <div className="bg-amber-900/30 text-amber-100 border-b border-amber-500/30 text-xs sm:text-sm px-4 py-2 text-center">
+          ER Simulator is an educational simulation tool for licensed clinicians only. It does not provide medical, legal, or practice advice. Always follow your formal training, supervising teams, local laws, and hospital protocols before making real patient decisions.
+        </div>
         {children}
       </body>
     </html>

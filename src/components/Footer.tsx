@@ -9,9 +9,15 @@ export function Footer() {
             Tjomsland LLC dba ER Simulator
           </p>
           <p className="max-w-md text-xs text-slate-500">
-            ER Simulator is educational software and does not replace real
-            patients, residency training, or hospital protocols. Always follow
-            your local guidelines and medical judgment.
+            ER Simulator is an educational simulation platform for licensed clinicians.
+            It does not replace formal medical education, legal guidance, or local
+            hospital protocols. Never use it for real patient care or to determine
+            scope of practice.
+          </p>
+          <p className="text-[11px] text-slate-500">
+            Always consult your governing associations (AMA, ACEP, NCCPA, ANCC, etc.),
+            supervising physicians, and local regulations before applying anything you
+            study here.
           </p>
         </div>
 
@@ -28,12 +34,16 @@ export function Footer() {
           <Link href="/refund" className="hover:text-slate-200">
             Refund policy
           </Link>
+          <Link href="/attribution" className="hover:text-slate-200">
+            Attribution
+          </Link>
         </div>
       </div>
 
       <div className="border-t border-slate-900">
         <div className="mx-auto max-w-6xl px-4 py-4 text-xs text-slate-500">
-          © {new Date().getFullYear()} Tjomsland LLC. All rights reserved.
+          © {new Date().getFullYear()} Tjomsland LLC. Select scenarios adapted from Creative
+          Commons emergency medicine resources (CC BY-SA 4.0) with attribution provided.
         </div>
       </div>
     </footer>

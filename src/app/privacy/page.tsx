@@ -18,7 +18,9 @@ export default function PrivacyPage() {
             This Privacy Policy explains how{" "}
             <strong>Tjomsland LLC dba ER Simulator</strong> (&quot;we&quot;,
             &quot;us&quot;, &quot;our&quot;) collects, uses, and protects your
-            information when you use ER Simulator (the &quot;Service&quot;).
+            information when you use ER Simulator (the &quot;Service&quot;). The Service
+            is strictly an educational simulation tool and never collects patient protected
+            health information (PHI). All scenarios are fictional composites.
           </p>
 
           <h2 className="mt-6 text-base font-semibold text-slate-50">
@@ -47,6 +49,12 @@ export default function PrivacyPage() {
             We use information to operate and improve the Service, personalize
             scenarios, communicate with you about updates, and comply with legal
             obligations.
+          </p>
+          <p className="mt-2 text-xs text-slate-400">
+            ER Simulator content is not a substitute for formal training or official guidance.
+            Any educational recommendations within the Service must be validated through your
+            accrediting bodies (AMA, ACEP, NCCPA, ANCC, etc.) and supervisors before being used in
+            practice.
           </p>
 
           <h2 className="mt-4 text-base font-semibold text-slate-50">

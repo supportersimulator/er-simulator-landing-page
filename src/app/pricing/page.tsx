@@ -12,9 +12,14 @@ export default function PricingPage() {
             Simple pricing for serious clinicians.
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-400">
-            ER Simulator is still in development. Pricing below is our current
-            target and may be adjusted based on early access feedback. You will
-            always see pricing and terms before you’re charged.
+            ER Simulator is an educational simulation tool for licensed clinicians.
+            It does not replace formal medical education, CME, or hospital credentialing,
+            and it must never be used to guide real patient care decisions.
+          </p>
+          <p className="mt-2 text-xs text-slate-500">
+            By joining, you certify that you will follow your governing body (AMA, ACOEP, NCCPA,
+            ANCC, etc.), supervising physicians, and local legal requirements before applying any
+            knowledge to practice.
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -46,8 +51,7 @@ export default function PricingPage() {
                   Early access coming soon
                 </button>
                 <p className="mt-2 text-xs text-slate-500">
-                  Paddle will securely process payments for subscriptions and
-                  receipts.
+                  For educational use only. Payments processed securely by Paddle (Merchant of Record).
                 </p>
               </div>
             </div>
@@ -79,7 +83,7 @@ export default function PricingPage() {
                   Join annual early access list
                 </button>
                 <p className="mt-2 text-xs text-slate-500">
-                  No charges occur until we explicitly open paid access.
+                  For educational use only. No charges occur until we explicitly open paid access.
                 </p>
               </div>
             </div>

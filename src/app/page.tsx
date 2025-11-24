@@ -1,5 +1,6 @@
 // src/app/page.tsx
 import Link from "next/link";
+import type { ReactNode } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
@@ -12,21 +13,34 @@ export default function HomePage() {
         {/* Hero */}
         <section className="mx-auto flex max-w-6xl flex-col items-start gap-10 px-4 py-12 md:flex-row md:items-center md:py-20">
           <div className="flex-1 space-y-6">
-            <span className="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
-              Built by an Emergency Medicine PA & simulation educator
-            </span>
+            <div className="flex flex-wrap gap-2">
+              <span className="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                Built by an Emergency Medicine clinician & certified sim facilitator
+              </span>
+              <span className="inline-flex items-center rounded-full border border-slate-600 bg-slate-900/60 px-3 py-1 text-[10px] font-semibold text-slate-200">
+                For licensed clinicians · Educational simulation only
+              </span>
+            </div>
 
             <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
-              Emergency medicine simulations that feel like{" "}
-              <span className="text-emerald-400">real patients</span>—without
-              needing a sim lab.
+              Emergency medicine simulations with{" "}
+              <span className="text-emerald-400">AI voice-responsive patients</span>{" "}
+              that feel like your own mobile sim lab.
             </h1>
 
             <p className="max-w-xl text-base text-slate-300 sm:text-lg">
               ER Simulator blends AI, live vitals, and voice-to-voice
               interaction so you can practice high-stakes cases anytime, from
-              STEMI to septic shock. Perfect for PAs, physicians, residents, and
-              EM learners who want reps that actually stick.
+              STEMI to septic shock. It is designed for physicians, PAs, NPs, and
+              residents who already have formal medical training and want extra
+              reps—similar to Rosh Review, OnlineMedEd, or FOAMed cases.
+            </p>
+            <p className="max-w-2xl text-xs text-slate-400">
+              ER Simulator is for informal educational experiences only and is not a
+              substitute for formal medical training or professional advice. By
+              participating you agree to stay within your licensed scope, follow local
+              hospital protocols, and comply with all applicable laws and governing
+              bodies before making patient-care decisions.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -34,20 +48,22 @@ export default function HomePage() {
                 href="/pricing"
                 className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
               >
-                Get early access
+                Join clinician waitlist — educational use only
               </Link>
               <Link
                 href="#how-it-works"
                 className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-100 hover:border-slate-500"
               >
-                See how it works
+                See how simulations work
               </Link>
             </div>
 
-            <p className="text-xs text-slate-500">
-              No credit card required during early access. Not for real patient
-              use.
-            </p>
+              <p className="text-xs text-slate-500">
+                No credit card required during early access. Not for real patient
+                use. Always defer to your supervising team, accrediting bodies
+                (AMA, ACEP, NCCPA, ANCC, etc.), and local laws before acting on
+                anything you practice here.
+              </p>
           </div>
 
           {/* Simple “monitor” visual */}
@@ -106,7 +122,7 @@ export default function HomePage() {
         >
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-              Built for real emergency department thinking.
+              Built to sharpen your emergency department thinking.
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-slate-400">
               ER Simulator is being designed to mirror how you actually think,
@@ -115,8 +131,8 @@ export default function HomePage() {
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <FeatureCard
-                title="Voice-to-voice, like talking to a patient"
-                description="Use natural language to take a history, give orders, and talk to consultants. No rigid menus—speak like you do on shift."
+                title="Voice-to-voice, mock interactive encounters"
+                description="Use natural language to take a brief history, get exam insights, give orders, and formulate your plan. No rigid menus—speak like you would in a real simulation center."
               />
               <FeatureCard
                 title="Dynamic vitals & monitor"
@@ -148,15 +164,75 @@ export default function HomePage() {
               />
               <StepCard
                 step="2"
-                title="Talk & treat in real time"
-                text="Speak to the AI patient and nurse, give orders, interpret vitals, and decide what matters most right now."
+                title="Talk & practice in real time"
+                text="Speak to the simulated patient and nurse, get exam insights, give orders, and shape your plan—fictional practice only, never for real patients."
               />
               <StepCard
                 step="3"
                 title="Debrief & grow"
-                text="See what went well, what was missed, and how an expert might approach the same case."
+                text="See what went well, what was missed, and then reinforce the topic through your formal training, CME, or hospital simulation program."
               />
             </div>
+          </div>
+        </section>
+
+        {/* Responsible use */}
+        <section className="border-t border-slate-900 bg-slate-950/70">
+          <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:py-16 md:flex-row">
+            <div className="flex-1">
+              <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
+                How to use ER Simulator responsibly
+              </h2>
+              <p className="mt-3 text-sm text-slate-400">
+                Think of ER Simulator as a study buddy: it encourages you to review
+                clinical frameworks but never replaces formal education, credentialing,
+                or CME. You remain solely responsible for your practice decisions.
+              </p>
+            </div>
+            <div className="flex-1 space-y-3 text-sm text-slate-300">
+              <Bullet>
+                Not medical advice. This platform does not diagnose, treat, or
+                prescribe. For authoritative instruction, follow your medical school,
+                residency, or recognized associations (AMA, ACOEP, NCCPA, AANP, etc.).
+              </Bullet>
+              <Bullet>
+                Stay within scope. Only licensed clinicians may use ER Simulator.
+                You must adhere to your licensure requirements, supervising physicians,
+                and institutional protocols at all times.
+              </Bullet>
+              <Bullet>
+                Follow local law & policy. We provide no legal counsel. Consult your
+                hospital, EMS agency, or legal advisors for documentation, billing,
+                or regulatory questions.
+              </Bullet>
+              <Bullet>
+                Fictional scenarios only. Never use ER Simulator to manage real patients.
+                Translate lessons into practice only through approved pathways such as
+                residency conferences, CME, or hospital simulations.
+              </Bullet>
+            </div>
+          </div>
+        </section>
+
+        {/* Attribution */}
+        <section className="border-t border-slate-900 bg-slate-950/40">
+          <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
+            <h2 className="text-xl font-semibold text-slate-50">Attribution & licensing</h2>
+            <p className="mt-3 text-sm text-slate-400">
+              Some scenario seeds draw from Creative Commons emergency medicine training
+              resources (CC BY-SA 4.0). We always credit original authors and share
+              adaptations under the same license. Original ER Simulator content ©{" "}
+              {new Date().getFullYear()} Tjomsland LLC dba ER Simulator.
+            </p>
+            <p className="mt-2 text-xs text-slate-500">
+              Full attribution details:{" "}
+              <Link
+                href="/attribution"
+                className="text-emerald-300 underline-offset-2 hover:underline"
+              >
+                ersimulator.com/attribution
+              </Link>
+            </p>
           </div>
         </section>
 
@@ -214,6 +290,30 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Disclaimers */}
+        <section className="border-t border-slate-900 bg-slate-950/50">
+          <div className="mx-auto max-w-4xl px-4 py-12 text-sm text-slate-300">
+            <h2 className="text-lg font-semibold text-slate-50">Disclaimers</h2>
+            <p className="mt-4">
+              By using ER Simulator, you agree not to interpret any content as medical
+              advice for treating yourself or others, including but not limited to patients
+              under your care. Always consult your own physician, supervising team, or
+              governing medical association for personal or patient-specific guidance. This
+              disclaimer applies to all contributors and guests. Under no circumstances
+              shall Tjomsland LLC dba ER Simulator or its contributors be responsible for
+              damages arising from use of the platform.
+            </p>
+            <p className="mt-4 text-slate-400">
+              Furthermore, ER Simulator must not be used in any legal capacity whatsoever,
+              including but not limited to establishing “standard of care,” supporting
+              expert testimony, or serving as documentation for clinical decisions. No
+              guarantee is provided regarding the accuracy or completeness of statements
+              made within the simulation. Always perform independent verification through
+              formal education, CME, and local hospital protocols.
+            </p>
+          </div>
+        </section>
       </main>
 
       <Footer />
@@ -221,6 +321,14 @@ export default function HomePage() {
   );
 }
 
+function Bullet({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex gap-3">
+      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-400" />
+      <p>{children}</p>
+    </div>
+  );
+}
 function FeatureCard({
   title,
   description,
