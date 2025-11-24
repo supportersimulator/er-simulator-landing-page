@@ -11,8 +11,8 @@ export default function HomePage() {
 
       <main className="flex-1 gradient-hero">
         {/* Hero */}
-        <section className="mx-auto flex max-w-6xl flex-col items-start gap-10 px-4 py-12 md:flex-row md:items-center md:py-20">
-          <div className="flex-1 space-y-6">
+        <section className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-2 md:items-center md:py-20">
+          <div className="space-y-6">
             <div className="flex flex-wrap gap-2">
               <span className="inline-flex items-center rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
                 Built by an Emergency Medicine clinician & certified sim facilitator
@@ -22,7 +22,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <h1 className="text-balance text-3xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-5xl">
+            <h1 className="text-balance text-2xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-[2.75rem] lg:leading-snug">
               Emergency medicine simulations with{" "}
               <span className="text-emerald-400">AI voice-responsive patients</span>{" "}
               that feel like your own mobile sim lab.
@@ -67,7 +67,7 @@ export default function HomePage() {
           </div>
 
           {/* Simple “monitor” visual */}
-          <div className="mt-8 flex flex-1 justify-center md:mt-0">
+          <div className="mt-4 flex justify-center md:mt-0">
             <div className="w-full max-w-md rounded-2xl border border-slate-800 bg-slate-900/70 p-4 shadow-xl shadow-black/60">
               <div className="flex items-center justify-between text-xs text-slate-400">
                 <span>Sim Monitor</span>
