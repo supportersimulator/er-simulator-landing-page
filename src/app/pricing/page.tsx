@@ -40,7 +40,7 @@ const plans = [
     ],
   },
   {
-    name: "Summit Plan",
+    name: "Summit",
     priceMonthly: 119,
     priceYearly: 1190,
     experiences: 50,
