@@ -29,12 +29,13 @@ export default function HomePage() {
             </h1>
 
             <p className="max-w-xl text-base text-slate-300 sm:text-lg">
-              ER Simulator blends AI, live vitals, and voice-to-voice
-              interaction so you can practice high-stakes cases anytime, from
-              STEMI to septic shock. It is designed for physicians, PAs, NPs, and
-              residents who already have formal medical training, especially those
-              preparing for Emergency Medicine oral boards or mock codes and needing
-              extra reps—similar to Rosh Review, OnlineMedEd, or FOAMed cases.
+              ER Simulator is an AI voice-to-voice rehearsal partner: you speak,
+              the simulated patient or facilitator answers back, and the monitor
+              reacts in real time. It’s built for physicians, PAs, NPs, and
+              residents with formal training—especially anyone prepping for EM
+              oral boards, mock codes, or complex consults who just wants more
+              reps between shifts, similar to Rosh Review, OnlineMedEd, or FOAMed
+              cases.
             </p>
             <p className="max-w-2xl text-xs text-slate-400">
               ER Simulator is for informal educational experiences only and is not a
@@ -133,7 +134,7 @@ export default function HomePage() {
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <FeatureCard
                 title="Voice-to-voice, mock interactive encounters"
-                description="Use natural language to take a brief history, get exam insights, give orders, and formulate your plan. Powered by OpenAI Realtime so responses feel immediate—speak like you would in a real simulation center."
+                description="Use natural language to take a brief history, get exam insights, give orders, and formulate your plan. Our AI voice-to-voice simulation keeps the patient talking back instantly—just like a bedside drill."
               />
               <FeatureCard
                 title="Dynamic vitals & monitor"
@@ -147,45 +148,45 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* OpenAI realtime */}
+        {/* Realtime voice */}
         <section className="border-t border-slate-900 bg-slate-950/60">
           <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center md:py-16">
             <div className="flex-1 space-y-4">
               <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-                Built on OpenAI Realtime voice technology
+                Realtime voice simulation built for clinicians
               </h2>
               <p className="text-sm text-slate-300">
-                Each encounter streams through OpenAI’s realtime Whisper + GPT voice stack.
-                You speak naturally, it transcribes instantly, reasons about the case, and
-                replies with a lifelike patient or nurse voice. No scripted menus—just
-                responsive conversational simulation inside a compliance-safe environment.
+                Talk to the AI patient like you would in the trauma bay and hear the answer
+                within a heartbeat. The facilitator voice keeps you honest, nudging vitals,
+                asking “anything else?” and mirroring the on-shift pressure—without scripted
+                menus or tech tinkering.
               </p>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Dual voice
-                  sessions (patient + facilitator) so you can hear vitals, consults, and
-                  coaching simultaneously.
+                  sessions (patient + facilitator) mimic the patient encounter and charge
+                  nurse coaching at the same time.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-300">•</span> Server-side
-                  reasoning ensures every reply references the scenario roadmap and
-                  remains fictional, honoring our “no medical advice” pledge.
+                  <span className="font-semibold text-emerald-300">•</span> Every reply
+                  references the scenario roadmap yet stays clearly fictional, honoring our
+                  “not medical advice” promise.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-300">•</span> Easy to run on
-                  a laptop, tablet, or phone—no dedicated sim lab hardware needed.
+                  <span className="font-semibold text-emerald-300">•</span> Runs on your
+                  laptop, tablet, or phone—no sim lab crew, mannequins, or setup windows.
                 </li>
               </ul>
             </div>
             <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-2xl shadow-black/40">
               <h3 className="text-base font-semibold text-emerald-300">
-                Realtime conversation loop
+                What the AI voice-to-voice flow feels like
               </h3>
               <ol className="mt-4 space-y-3 text-slate-300">
                 <li>1. You speak orders, questions, or reassessments into your mic.</li>
-                <li>2. Whisper transcribes, GPT analyzes context, compares vitals states.</li>
-                <li>3. OpenAI Realtime streams back distinct voices for patient, nurse, facilitator.</li>
-                <li>4. ER Simulator updates the vitals monitor and logs the turn for future study.</li>
+                <li>2. The simulator listens instantly and keeps pace with your train of thought.</li>
+                <li>3. Patient, nurse, and facilitator voices answer with natural tone and urgency.</li>
+                <li>4. The monitor shifts accordingly, and each turn is saved for coaching or oral board review.</li>
               </ol>
               <p className="mt-4 text-xs text-slate-500">
                 Note: All content remains fictional and educational. Users must follow their
