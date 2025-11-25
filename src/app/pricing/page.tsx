@@ -83,45 +83,49 @@ export default function PricingPage() {
     <div className="flex min-h-screen flex-col bg-slate-950">
       <Navbar />
       <main className="flex-1">
-        <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
-          <h1 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
-            Sim Experiences that reload every month.
-          </h1>
-          <p className="mt-3 max-w-2xl text-sm text-slate-400">
-            ER Simulator is an educational simulation tool for licensed clinicians.
-            It does not replace formal medical education, CME, or hospital credentialing,
-            and it must never be used to guide real patient care decisions.
-          </p>
-          <p className="mt-2 text-xs text-slate-500">
-            By joining, you certify that you will follow your governing body (AMA, ACOEP, NCCPA,
-            ANCC, etc.), supervising physicians, and local legal requirements before applying any
-            knowledge to practice.
-          </p>
-
-          <div className="mt-8 inline-flex rounded-full border border-slate-800 bg-slate-900/70 p-1 text-xs font-semibold text-slate-300">
-            <button
-              className={`rounded-full px-4 py-2 ${
-                !isYearly ? "bg-emerald-500 text-slate-950" : ""
-              }`}
-              onClick={() => setBillingPeriod("monthly")}
-            >
-              Monthly
-            </button>
-            <button
-              className={`rounded-full px-4 py-2 ${
-                isYearly ? "bg-emerald-500 text-slate-950" : ""
-              }`}
-              onClick={() => setBillingPeriod("yearly")}
-            >
-              Yearly (best value)
-            </button>
+        <section className="mx-auto max-w-6xl px-4 py-10 md:py-12">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-[2.4rem]">
+                Sim Experiences that reload every month.
+              </h1>
+              <p className="mt-2 max-w-2xl text-sm text-slate-400">
+                ER Simulator is an educational simulation tool for licensed clinicians.
+                It does not replace formal medical education, CME, or hospital credentialing,
+                and it must never be used to guide real patient care decisions.
+              </p>
+              <p className="mt-2 text-xs text-slate-500">
+                By joining, you certify that you will follow your governing body (AMA, ACOEP, NCCPA,
+                ANCC, etc.), supervising physicians, and local legal requirements before applying any
+                knowledge to practice.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <div className="inline-flex rounded-full border border-slate-800 bg-slate-900/70 p-1 text-xs font-semibold text-slate-300">
+                <button
+                  className={`rounded-full px-4 py-2 ${
+                    !isYearly ? "bg-emerald-500 text-slate-950" : ""
+                  }`}
+                  onClick={() => setBillingPeriod("monthly")}
+                >
+                  Monthly
+                </button>
+                <button
+                  className={`rounded-full px-4 py-2 ${
+                    isYearly ? "bg-emerald-500 text-slate-950" : ""
+                  }`}
+                  onClick={() => setBillingPeriod("yearly")}
+                >
+                  Yearly (best value)
+                </button>
+              </div>
+              <p className="text-xs text-slate-500">
+                Yearly plans include approximately two months free versus paying monthly.
+              </p>
+            </div>
           </div>
 
-          <p className="mt-3 text-xs text-slate-500">
-            Yearly plans include approximately two months free compared to paying monthly.
-          </p>
-
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {plans.map((plan) => {
               const selected = selectedPlan === plan.name;
               return (
@@ -129,7 +133,7 @@ export default function PricingPage() {
                   type="button"
                   key={plan.name}
                   onClick={() => setSelectedPlan(plan.name)}
-                  className={`flex h-full flex-col rounded-2xl border p-5 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                  className={`flex h-full flex-col rounded-2xl border p-4 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                     selected
                       ? "border-emerald-500/70 bg-slate-900 shadow-lg shadow-emerald-500/20"
                       : "border-slate-800 bg-slate-900/70 hover:border-slate-700"
@@ -155,7 +159,7 @@ export default function PricingPage() {
                     </span>
                   </div>
 
-                  <p className="mt-4 text-3xl font-bold text-emerald-400">
+                  <p className="mt-3 text-3xl font-bold text-emerald-400">
                     {formatPrice(plan)}
                   </p>
                   <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
