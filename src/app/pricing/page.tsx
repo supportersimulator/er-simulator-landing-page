@@ -1,15 +1,95 @@
+// @ts-nocheck
+"use client";
+
 import { Navbar } from "../../components/Navbar";
 import { Footer } from "../../components/Footer";
 import Link from "next/link";
+import { useState } from "react";
+
+type BillingPeriod = "monthly" | "yearly";
+
+const plans = [
+  {
+    name: "Starter",
+    priceMonthly: 19,
+    priceYearly: 190,
+    experiences: 5,
+    badge: "Great for trying out AI-powered ER simulations",
+    notes: [
+      "Great for trying out AI-powered ER simulations",
+      "Sim Experiences reload every month",
+      "First month free",
+    ],
+  },
+  {
+    name: "Core",
+    priceMonthly: 39,
+    priceYearly: 390,
+    experiences: 15,
+    badge: "Most clinicians pick this",
+    notes: [
+      "Perfect for residents running several sims each month",
+      "Sim Experiences reload every month",
+      "First month free",
+    ],
+    highlight: true,
+  },
+  {
+    name: "Pro",
+    priceMonthly: 79,
+    priceYearly: 790,
+    experiences: 30,
+    badge: "For serious, ongoing practice",
+    notes: [
+      "Ideal for serious, ongoing practice",
+      "Sim Experiences reload every month",
+      "First month free",
+    ],
+  },
+  {
+    name: "Summit Plan",
+    priceMonthly: 119,
+    priceYearly: 1190,
+    experiences: 50,
+    badge: "Designed for fellows, faculty, and heavy users",
+    notes: [
+      "Designed for fellows, faculty, and heavy users",
+      "Sim Experiences reload every month",
+      "First month free",
+    ],
+  },
+];
+
+const simPacks = [
+  {
+    label: "Sim Pack +5",
+    description: "Adds 5 extra Sim Experiences for this month",
+    price: "$9.99",
+  },
+  {
+    label: "Sim Pack +20",
+    description: "Adds 20 extra Sim Experiences for this month",
+    price: "$22.99",
+  },
+];
 
 export default function PricingPage() {
+  const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
+  const isYearly = billingPeriod === "yearly";
+
+  const formatPrice = (plan: (typeof plans)[number]) => {
+    const value = isYearly ? plan.priceYearly : plan.priceMonthly;
+    const suffix = isYearly ? "/ year" : "/ month";
+    return `$${value}${suffix}`;
+  };
+
   return (
     <div className="flex min-h-screen flex-col bg-slate-950">
       <Navbar />
       <main className="flex-1">
-        <section className="mx-auto max-w-4xl px-4 py-12 md:py-16">
+        <section className="mx-auto max-w-5xl px-4 py-12 md:py-16">
           <h1 className="text-3xl font-semibold tracking-tight text-slate-50 md:text-4xl">
-            Simple pricing for serious clinicians.
+            Sim Experiences that reload every month.
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-400">
             ER Simulator is an educational simulation tool for licensed clinicians.
@@ -22,70 +102,185 @@ export default function PricingPage() {
             knowledge to practice.
           </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
-              <h2 className="text-lg font-semibold text-slate-50">
-                Monthly – ER Simulator Pro
-              </h2>
-              <p className="mt-2 text-sm text-slate-400">
-                Ideal for individual clinicians who want unlimited practice.
-              </p>
-              <p className="mt-6 text-3xl font-bold text-emerald-400">
-                $19.99
-                <span className="text-base font-medium text-slate-400">
-                  {" "}
-                  / month
-                </span>
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                <li>• Unlimited AI-driven EM simulations</li>
-                <li>• Voice-to-voice interaction with patient & nurse</li>
-                <li>• Dynamic vitals monitor & debriefs</li>
-                <li>• Access on desktop (mobile later)</li>
-              </ul>
-              <div className="mt-6">
-                <button
-                  className="w-full rounded-full bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
-                  disabled
+          <div className="mt-8 inline-flex rounded-full border border-slate-800 bg-slate-900/70 p-1 text-xs font-semibold text-slate-300">
+            <button
+              className={`rounded-full px-4 py-2 ${
+                !isYearly ? "bg-emerald-500 text-slate-950" : ""
+              }`}
+              onClick={() => setBillingPeriod("monthly")}
+            >
+              Monthly
+            </button>
+            <button
+              className={`rounded-full px-4 py-2 ${
+                isYearly ? "bg-emerald-500 text-slate-950" : ""
+              }`}
+              onClick={() => setBillingPeriod("yearly")}
+            >
+              Yearly (best value)
+            </button>
+          </div>
+
+          <p className="mt-3 text-xs text-slate-500">
+            Yearly plans include approximately two months free compared to paying monthly.
+          </p>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {plans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`flex flex-col rounded-2xl border p-6 ${
+                  plan.highlight
+                    ? "border-emerald-500/60 bg-slate-900 shadow-xl shadow-emerald-500/20"
+                    : "border-slate-800 bg-slate-900/70"
+                }`}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <h2 className="text-lg font-semibold text-slate-50">
+                    {plan.name}
+                  </h2>
+                  <span className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-300">
+                    Sim Experiences
+                  </span>
+                </div>
+                <p className="mt-2 text-sm text-slate-400">{plan.badge}</p>
+                <p className="mt-6 text-3xl font-bold text-emerald-400">
+                  {formatPrice(plan)}
+                </p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+                  First month free
+                </p>
+                <p className="mt-4 text-sm text-slate-200">
+                  Includes{" "}
+                  <span className="font-semibold text-emerald-300">
+                    {plan.experiences} Sim Experiences
+                  </span>{" "}
+                  each month.
+                </p>
+                <ul className="mt-4 space-y-2 text-sm text-slate-300">
+                  {plan.notes.map((note) => (
+                    <li key={note}>• {note}</li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <button
+                    className="w-full rounded-full bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
+                    disabled
+                  >
+                    Early access coming soon
+                  </button>
+                  <p className="mt-2 text-xs text-slate-500">
+                    For educational use only. Payments processed securely by Paddle
+                    (Merchant of Record).
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+            <h3 className="text-lg font-semibold text-slate-50">
+              Need more runs this month? Add a Sim Pack.
+            </h3>
+            <p className="mt-2 text-sm text-slate-400">
+              Sim Packs top up your balance immediately. They expire at the end of the
+              current monthly cycle and do not roll over.
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {simPacks.map((pack) => (
+                <div
+                  key={pack.label}
+                  className="rounded-xl border border-slate-800 bg-slate-950/60 p-4"
                 >
-                  Early access coming soon
-                </button>
-                <p className="mt-2 text-xs text-slate-500">
-                  For educational use only. Payments processed securely by Paddle (Merchant of Record).
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-sm font-semibold text-slate-50">
+                      {pack.label}
+                    </h4>
+                    <span className="text-sm font-semibold text-emerald-300">
+                      {pack.price}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-xs text-slate-400">{pack.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 lg:grid-cols-2">
+            <div>
+              <h3 className="text-lg font-semibold text-slate-50">
+                How Sim Experiences appear in the app
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                <li>
+                  • Dashboard status:{" "}
+                  <span className="font-semibold text-emerald-300">
+                    “Sim Experiences remaining this month: X of Y”
+                  </span>{" "}
+                  plus a bar showing “This month’s Sim Experiences used.”
+                </li>
+                <li>
+                  • Reminder text: “Sim Experiences reload every month with your subscription.”
+                </li>
+                <li>
+                  • Start Simulation screen: “You have X Sim Experiences remaining this month.”
+                </li>
+                <li>
+                  • Low balance nudge (≤2 remaining): “You’re almost out of Sim Experiences this
+                  month. You can upgrade your plan or add a Sim Pack at any time.”
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-50">
+                When a user runs out
+              </h3>
+              <p className="mt-3 text-sm text-slate-300">
+                New simulations pause until they upgrade or add a Sim Pack.
+              </p>
+              <div className="mt-4 rounded-xl border border-slate-800 bg-slate-950/70 p-4 text-sm text-slate-200">
+                <p className="font-semibold text-rose-300">
+                  “You’ve used all your Sim Experiences for this month”
+                </p>
+                <p className="mt-2 text-slate-400">
+                  “To run more simulations, you can upgrade your plan or add a Sim Pack.”
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-emerald-200">
+                    Upgrade plan
+                  </span>
+                  <span className="rounded-full bg-emerald-500/20 px-3 py-1 text-emerald-200">
+                    Add a Sim Pack
+                  </span>
+                </div>
+                <p className="mt-3 text-[11px] text-slate-500">
+                  The Start Simulation button is disabled in this state with inline guidance.
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="flex flex-col rounded-2xl border border-emerald-500/50 bg-slate-900 p-6">
-              <h2 className="text-lg font-semibold text-slate-50">
-                Annual – ER Simulator Pro
-              </h2>
-              <p className="mt-2 text-sm text-slate-400">
-                Best value for dedicated EM clinicians and programs.
-              </p>
-              <p className="mt-6 text-3xl font-bold text-emerald-400">
-                $199
-                <span className="text-base font-medium text-slate-400">
-                  {" "}
-                  / year
-                </span>
-              </p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                <li>• Everything in Monthly</li>
-                <li>• Priority access to new cases & features</li>
-                <li>• Potential CME support in future iterations</li>
+          <div className="mt-12 grid gap-6 rounded-2xl border border-slate-800 bg-slate-900/60 p-6 lg:grid-cols-2">
+            <div>
+              <h3 className="text-lg font-semibold text-slate-50">
+                First month free messaging
+              </h3>
+              <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                <li>• Badge next to every plan price: “First month free.”</li>
+                <li>
+                  • Banner in account area for new users: “You’re in your free first month. Your
+                  Sim Experiences will continue each month as long as your subscription stays active.”
+                </li>
               </ul>
-              <div className="mt-6">
-                <button
-                  className="w-full rounded-full bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
-                  disabled
-                >
-                  Join annual early access list
-                </button>
-                <p className="mt-2 text-xs text-slate-500">
-                  For educational use only. No charges occur until we explicitly open paid access.
-                </p>
-              </div>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-slate-50">
+                FAQ (what is a Sim Experience?)
+              </h3>
+              <p className="mt-3 text-sm text-slate-300">
+                A Sim Experience is one full run of an AI-powered simulation scenario. Each
+                plan includes a set number of Sim Experiences that reload every month.
+              </p>
             </div>
           </div>
 
