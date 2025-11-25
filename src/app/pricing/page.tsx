@@ -171,7 +171,7 @@ export default function PricingPage() {
                       {plan.experiences}
                     </p>
                     <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
-                      Monthly Sims
+                      Monthly Scenarios
                     </p>
                   </div>
 
