@@ -32,8 +32,9 @@ export default function HomePage() {
               ER Simulator blends AI, live vitals, and voice-to-voice
               interaction so you can practice high-stakes cases anytime, from
               STEMI to septic shock. It is designed for physicians, PAs, NPs, and
-              residents who already have formal medical training and want extra
-              reps—similar to Rosh Review, OnlineMedEd, or FOAMed cases.
+              residents who already have formal medical training, especially those
+              preparing for Emergency Medicine oral boards or mock codes and needing
+              extra reps—similar to Rosh Review, OnlineMedEd, or FOAMed cases.
             </p>
             <p className="max-w-2xl text-xs text-slate-400">
               ER Simulator is for informal educational experiences only and is not a
@@ -132,7 +133,7 @@ export default function HomePage() {
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <FeatureCard
                 title="Voice-to-voice, mock interactive encounters"
-                description="Use natural language to take a brief history, get exam insights, give orders, and formulate your plan. No rigid menus—speak like you would in a real simulation center."
+                description="Use natural language to take a brief history, get exam insights, give orders, and formulate your plan. Powered by OpenAI Realtime so responses feel immediate—speak like you would in a real simulation center."
               />
               <FeatureCard
                 title="Dynamic vitals & monitor"
@@ -142,6 +143,54 @@ export default function HomePage() {
                 title="Case library you’ll actually remember"
                 description="High-yield EM cases built around pattern recognition, cognitive traps, and debriefs so the learning sticks."
               />
+            </div>
+          </div>
+        </section>
+
+        {/* OpenAI realtime */}
+        <section className="border-t border-slate-900 bg-slate-950/60">
+          <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center md:py-16">
+            <div className="flex-1 space-y-4">
+              <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
+                Built on OpenAI Realtime voice technology
+              </h2>
+              <p className="text-sm text-slate-300">
+                Each encounter streams through OpenAI’s realtime Whisper + GPT voice stack.
+                You speak naturally, it transcribes instantly, reasons about the case, and
+                replies with a lifelike patient or nurse voice. No scripted menus—just
+                responsive conversational simulation inside a compliance-safe environment.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li>
+                  <span className="font-semibold text-emerald-300">•</span> Dual voice
+                  sessions (patient + facilitator) so you can hear vitals, consults, and
+                  coaching simultaneously.
+                </li>
+                <li>
+                  <span className="font-semibold text-emerald-300">•</span> Server-side
+                  reasoning ensures every reply references the scenario roadmap and
+                  remains fictional, honoring our “no medical advice” pledge.
+                </li>
+                <li>
+                  <span className="font-semibold text-emerald-300">•</span> Easy to run on
+                  a laptop, tablet, or phone—no dedicated sim lab hardware needed.
+                </li>
+              </ul>
+            </div>
+            <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-2xl shadow-black/40">
+              <h3 className="text-base font-semibold text-emerald-300">
+                Realtime conversation loop
+              </h3>
+              <ol className="mt-4 space-y-3 text-slate-300">
+                <li>1. You speak orders, questions, or reassessments into your mic.</li>
+                <li>2. Whisper transcribes, GPT analyzes context, compares vitals states.</li>
+                <li>3. OpenAI Realtime streams back distinct voices for patient, nurse, facilitator.</li>
+                <li>4. ER Simulator updates the vitals monitor and logs the turn for future study.</li>
+              </ol>
+              <p className="mt-4 text-xs text-slate-500">
+                Note: All content remains fictional and educational. Users must follow their
+                licensing, local laws, and hospital protocols before translating any insights.
+              </p>
             </div>
           </div>
         </section>
@@ -170,8 +219,56 @@ export default function HomePage() {
               <StepCard
                 step="3"
                 title="Debrief & grow"
-                text="See what went well, what was missed, and then reinforce the topic through your formal training, CME, or hospital simulation program."
+                text="See what went well, what was missed, and then reinforce the topic through official oral board prep, CME, or your hospital simulation program."
               />
+            </div>
+          </div>
+        </section>
+
+        {/* Oral boards */}
+        <section className="border-t border-slate-900 bg-slate-950/70">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
+            <div className="space-y-4">
+              <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
+                Designed for Emergency Medicine oral board prep
+              </h2>
+              <p className="text-sm text-slate-300">
+                Oral boards require rapid synthesis, clear communication, and the ability to
+                verbalize next steps under pressure. ER Simulator lets you rehearse those
+                skills in realistic voice-driven cases, then cross-check with your program’s
+                rubric or attending feedback.
+              </p>
+              <ul className="space-y-2 text-sm text-slate-300">
+                <li>
+                  <span className="font-semibold text-emerald-300">•</span> Practice
+                  explaining differential diagnoses, orders, and reassessments aloud—the same
+                  cadence you’ll use during oral boards.
+                </li>
+                <li>
+                  <span className="font-semibold text-emerald-300">•</span> Use fictional
+                  patients to sharpen pattern recognition (sepsis, ACS, pediatric resus) without
+                  ever touching real patient care decisions.
+                </li>
+                <li>
+                  <span className="font-semibold text-emerald-300">•</span> Share session logs
+                  with mentors or coaches to get coaching on structure, not answers.
+                </li>
+              </ul>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-xl shadow-black/40">
+              <h3 className="text-base font-semibold text-emerald-300">
+                Oral board rehearsal checklist
+              </h3>
+              <ul className="mt-4 space-y-3 text-slate-300">
+                <li>☑️ State the chief complaint and sick/not-sick status clearly.</li>
+                <li>☑️ Call out immediate interventions (ABCs, monitors, access) verbally.</li>
+                <li>☑️ Explain differential and critical actions while the AI patient responds.</li>
+                <li>☑️ Summarize plan and next reassessment before ending the encounter.</li>
+              </ul>
+              <p className="mt-4 text-xs text-slate-500">
+                Reminder: This is supplemental practice only. Always rely on your oral board
+                curriculum, program directors, and accrediting bodies for official preparation.
+              </p>
             </div>
           </div>
         </section>
