@@ -166,13 +166,17 @@ export default function PricingPage() {
                     First month free
                   </p>
 
-                  <p className="mt-3 text-sm text-slate-300">
-                    Includes{" "}
-                    <span className="font-semibold text-emerald-300">
-                      {plan.experiences} Sim Experiences
-                    </span>{" "}
-                    each month.
-                  </p>
+                  <div className="mt-4 rounded-xl border border-emerald-400/30 bg-slate-950/60 px-3 py-4 text-center">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
+                      Monthly allotment
+                    </p>
+                    <p className="mt-2 text-4xl font-black text-emerald-200">
+                      {plan.experiences}
+                    </p>
+                    <p className="text-xs font-semibold text-slate-300">
+                      Sim Experiences
+                    </p>
+                  </div>
 
                   <ul className="mt-3 flex flex-1 flex-col gap-2 text-sm text-slate-300">
                     {plan.notes.map((note) => (
