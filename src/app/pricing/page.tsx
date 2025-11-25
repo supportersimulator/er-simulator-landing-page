@@ -14,7 +14,6 @@ const plans = [
     priceMonthly: 19,
     priceYearly: 190,
     experiences: 5,
-    badge: "Great for trying out AI-powered ER simulations",
     notes: [
       "Great for trying out AI-powered ER simulations",
       "Sim Experiences reload every month",
@@ -26,20 +25,17 @@ const plans = [
     priceMonthly: 39,
     priceYearly: 390,
     experiences: 15,
-    badge: "Most clinicians pick this",
     notes: [
       "Perfect for residents running several sims each month",
       "Sim Experiences reload every month",
       "First month free",
     ],
-    highlight: true,
   },
   {
     name: "Pro",
     priceMonthly: 79,
     priceYearly: 790,
     experiences: 30,
-    badge: "For serious, ongoing practice",
     notes: [
       "Ideal for serious, ongoing practice",
       "Sim Experiences reload every month",
@@ -51,7 +47,6 @@ const plans = [
     priceMonthly: 119,
     priceYearly: 1190,
     experiences: 50,
-    badge: "Designed for fellows, faculty, and heavy users",
     notes: [
       "Designed for fellows, faculty, and heavy users",
       "Sim Experiences reload every month",
@@ -75,6 +70,7 @@ const simPacks = [
 
 export default function PricingPage() {
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
+  const [selectedPlan, setSelectedPlan] = useState<string>("Core");
   const isYearly = billingPeriod === "yearly";
 
   const formatPrice = (plan: (typeof plans)[number]) => {
@@ -125,57 +121,79 @@ export default function PricingPage() {
             Yearly plans include approximately two months free compared to paying monthly.
           </p>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {plans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`flex flex-col rounded-2xl border p-6 ${
-                  plan.highlight
-                    ? "border-emerald-500/60 bg-slate-900 shadow-xl shadow-emerald-500/20"
-                    : "border-slate-800 bg-slate-900/70"
-                }`}
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <h2 className="text-lg font-semibold text-slate-50">
-                    {plan.name}
-                  </h2>
-                  <span className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-300">
-                    Sim Experiences
-                  </span>
-                </div>
-                <p className="mt-2 text-sm text-slate-400">{plan.badge}</p>
-                <p className="mt-6 text-3xl font-bold text-emerald-400">
-                  {formatPrice(plan)}
-                </p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
-                  First month free
-                </p>
-                <p className="mt-4 text-sm text-slate-200">
-                  Includes{" "}
-                  <span className="font-semibold text-emerald-300">
-                    {plan.experiences} Sim Experiences
-                  </span>{" "}
-                  each month.
-                </p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-300">
-                  {plan.notes.map((note) => (
-                    <li key={note}>• {note}</li>
-                  ))}
-                </ul>
-                <div className="mt-6">
-                  <button
-                    className="w-full rounded-full bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
-                    disabled
-                  >
-                    Early access coming soon
-                  </button>
-                  <p className="mt-2 text-xs text-slate-500">
-                    For educational use only. Payments processed securely by Paddle
-                    (Merchant of Record).
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {plans.map((plan) => {
+              const selected = selectedPlan === plan.name;
+              return (
+                <button
+                  type="button"
+                  key={plan.name}
+                  onClick={() => setSelectedPlan(plan.name)}
+                  className={`flex h-full flex-col rounded-2xl border p-5 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                    selected
+                      ? "border-emerald-500/70 bg-slate-900 shadow-lg shadow-emerald-500/20"
+                      : "border-slate-800 bg-slate-900/70 hover:border-slate-700"
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-[11px] uppercase tracking-widest text-slate-500">
+                        Plan
+                      </p>
+                      <h2 className="text-lg font-semibold text-slate-50">
+                        {plan.name}
+                      </h2>
+                    </div>
+                    <span
+                      className={`rounded-full px-3 py-1 text-[11px] font-semibold ${
+                        selected
+                          ? "bg-emerald-500/20 text-emerald-200"
+                          : "bg-slate-800 text-slate-300"
+                      }`}
+                    >
+                      {selected ? "Selected" : "Choose"}
+                    </span>
+                  </div>
+
+                  <p className="mt-4 text-3xl font-bold text-emerald-400">
+                    {formatPrice(plan)}
                   </p>
-                </div>
-              </div>
-            ))}
+                  <p className="text-xs font-semibold uppercase tracking-wide text-emerald-300">
+                    First month free
+                  </p>
+
+                  <p className="mt-3 text-sm text-slate-300">
+                    Includes{" "}
+                    <span className="font-semibold text-emerald-300">
+                      {plan.experiences} Sim Experiences
+                    </span>{" "}
+                    each month.
+                  </p>
+
+                  <ul className="mt-3 flex flex-1 flex-col gap-2 text-sm text-slate-300">
+                    {plan.notes.map((note) => (
+                      <li key={note}>• {note}</li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-4">
+                    <span className="inline-flex rounded-full border border-emerald-400/40 px-3 py-1 text-[11px] font-semibold text-emerald-200">
+                      Sim Experiences reload monthly
+                    </span>
+                    <button
+                      className="mt-4 w-full rounded-full bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-slate-950 hover:bg-emerald-400"
+                      disabled
+                    >
+                      Early access coming soon
+                    </button>
+                    <p className="mt-2 text-xs text-slate-500">
+                      For educational use only. Payments processed securely by Paddle
+                      (Merchant of Record).
+                    </p>
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
           <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
