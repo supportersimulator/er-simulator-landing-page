@@ -16,7 +16,7 @@ const plans = [
     experiences: 5,
     notes: [
       "Great for trying out AI-powered ER simulations",
-      "Sim Experiences reload every month",
+      "5 new emergency scenarios reload every month",
       "First month free",
     ],
   },
@@ -27,7 +27,7 @@ const plans = [
     experiences: 15,
     notes: [
       "Perfect for residents running several sims each month",
-      "Sim Experiences reload every month",
+      "15 new emergency scenarios reload every month",
       "First month free",
     ],
   },
@@ -38,7 +38,7 @@ const plans = [
     experiences: 30,
     notes: [
       "Ideal for serious, ongoing practice",
-      "Sim Experiences reload every month",
+      "30 new emergency scenarios reload every month",
       "First month free",
     ],
   },
@@ -49,7 +49,7 @@ const plans = [
     experiences: 50,
     notes: [
       "Designed for fellows, faculty, and heavy users",
-      "Sim Experiences reload every month",
+      "50 new emergency scenarios reload every month",
       "First month free",
     ],
   },
@@ -171,7 +171,7 @@ export default function PricingPage() {
                       {plan.experiences}
                     </p>
                     <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
-                      Monthly Scenarios
+                      Emergency Scenarios
                     </p>
                   </div>
 
