@@ -166,15 +166,12 @@ export default function PricingPage() {
                     First month free
                   </p>
 
-                  <div className="mt-4 rounded-xl border border-emerald-400/30 bg-slate-950/60 px-3 py-2 text-center">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
-                      Monthly Sim Experiences
-                    </p>
-                    <p className="mt-1 text-4xl font-black text-emerald-200">
+                  <div className="mt-4 rounded-xl border border-emerald-400/30 bg-slate-950/60 px-3 py-1.5 text-center">
+                    <p className="text-4xl font-black text-emerald-200">
                       {plan.experiences}
                     </p>
-                    <p className="text-xs font-semibold text-slate-300">
-                      Sim Experiences
+                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
+                      Monthly Sims
                     </p>
                   </div>
 
