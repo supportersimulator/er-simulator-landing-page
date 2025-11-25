@@ -58,13 +58,15 @@ const plans = [
 const simPacks = [
   {
     label: "Sim Pack +5",
-    description: "Adds 5 extra Sim Experiences for this month",
+    description: "Adds 5 extra emergency scenarios for this month",
     price: "$9.99",
+    count: 5,
   },
   {
     label: "Sim Pack +20",
-    description: "Adds 20 extra Sim Experiences for this month",
+    description: "Adds 20 extra emergency scenarios for this month",
     price: "$22.99",
+    count: 20,
   },
 ];
 
@@ -166,12 +168,15 @@ export default function PricingPage() {
                     First month free
                   </p>
 
-                  <div className="mt-4 rounded-xl border border-emerald-400/30 bg-slate-950/60 px-3 py-1.5 text-center">
-                    <p className="text-4xl font-black text-emerald-200">
+                  <div className="mt-4 rounded-xl border border-emerald-400/30 bg-slate-950/60 px-3 py-3 text-center">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
+                      Emergency Scenarios
+                    </p>
+                    <p className="mt-1 text-4xl font-black text-emerald-200">
                       {plan.experiences}
                     </p>
-                    <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
-                      Emergency Scenarios
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
+                      New Cases Per Month
                     </p>
                   </div>
 
@@ -224,6 +229,17 @@ export default function PricingPage() {
                     </span>
                   </div>
                   <p className="mt-2 text-xs text-slate-400">{pack.description}</p>
+                  <div className="mt-4 rounded-xl border border-emerald-400/30 bg-slate-900/70 px-3 py-3 text-center">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-300">
+                      Emergency Scenarios
+                    </p>
+                    <p className="mt-1 text-3xl font-black text-emerald-200">
+                      +{pack.count}
+                    </p>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
+                      Added This Month
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
