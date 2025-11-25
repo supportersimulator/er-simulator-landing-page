@@ -17,7 +17,6 @@ const plans = [
     notes: [
       "Great for trying out AI-powered ER simulations",
       "5 new emergency scenarios reload every month",
-      "First month free",
     ],
   },
   {
@@ -28,7 +27,6 @@ const plans = [
     notes: [
       "Perfect for residents running several sims each month",
       "15 new emergency scenarios reload every month",
-      "First month free",
     ],
   },
   {
@@ -39,7 +37,6 @@ const plans = [
     notes: [
       "Ideal for serious, ongoing practice",
       "30 new emergency scenarios reload every month",
-      "First month free",
     ],
   },
   {
@@ -50,7 +47,6 @@ const plans = [
     notes: [
       "Designed for fellows, faculty, and heavy users",
       "50 new emergency scenarios reload every month",
-      "First month free",
     ],
   },
 ];
