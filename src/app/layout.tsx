@@ -1,5 +1,6 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,6 +16,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* FirstPromoter Affiliate Tracking - Main Script */}
+        <Script id="firstpromoter-init" strategy="afterInteractive">
+          {`(function(w){w.fpr=w.fpr||function(){w.fpr.q = w.fpr.q||[];w.fpr.q[arguments[0]=='set'?'unshift':'push'](arguments);};})(window);
+fpr("init", {cid:"luxpmari"});
+fpr("click");`}
+        </Script>
+        <Script
+          src="https://cdn.firstpromoter.com/fpr.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="min-h-screen bg-slate-950 text-slate-50 antialiased">
         <div className="bg-amber-900/30 text-amber-100 border-b border-amber-500/30 text-xs sm:text-sm px-4 py-2 text-center">
           ER Simulator is an educational simulation tool for licensed clinicians only. It does not provide medical, legal, or practice advice. Always follow your formal training, supervising teams, local laws, and hospital protocols before making real patient decisions.
