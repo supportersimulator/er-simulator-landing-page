@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ER Simulator Landing Page
 
-## Getting Started
+Marketing landing page for ER Simulator with integrated Stripe payment flows.
 
-First, run the development server:
+## Pages
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Route | Description |
+|-------|-------------|
+| `/` | Main landing page |
+| `/pricing` | Individual subscription plans (Starter, Core, Pro) |
+| `/enterprise` | Enterprise volume pricing with self-service checkout |
+| `/affiliate` | Affiliate referral landing page |
+| `/subscription/success` | Individual checkout success page |
+| `/enterprise/success` | Enterprise checkout success page |
+
+## Payment Integration
+
+### Individual Subscriptions (`/pricing`)
+
+Three subscription tiers with monthly and annual billing:
+
+| Tier | Monthly | Annual (10% off) | Cases/Month |
+|------|---------|------------------|-------------|
+| Starter | $19 | $171 | 5 |
+| Core | $39 | $351 | 15 |
+| Pro | $79 | $711 | 30 |
+
+**Features:**
+- 30-day free trial
+- Monthly/yearly toggle
+- Affiliate code detection from URL params (`?ref=`, `?via=`, `?affiliate=`)
+- Automatic affiliate discount application
+
+### Enterprise Volume Pricing (`/enterprise`)
+
+Self-service volume pricing for teams:
+
+| Seats | Discount |
+|-------|----------|
+| 1-9 | Standard (0%) |
+| 10-24 | 40% off |
+| 25-49 | 50% off |
+| 50+ | 60% off |
+
+**Features:**
+- Plan selection (Starter/Core/Pro)
+- Volume tier selector
+- Seat count slider (1-500)
+- Dynamic pricing calculator
+- Real-time API pricing fetch
+
+### Affiliate Program (`/affiliate`)
+
+Referral program with automatic discount application:
+
+- **First Year:** 50% off (6 months free)
+- **Renewals:** 15% off forever on annual plans
+
+Affiliates share links like:
+- `https://ersimulator.com/pricing?ref=PARTNER123`
+- `https://ersimulator.com/affiliate?code=PARTNER123`
+
+## Backend API Endpoints
+
+All payment flows integrate with the Django backend:
+
+```
+POST /api/payments/checkout/
+  - Individual subscription checkout
+  - Params: tier, billing_cycle, affiliate_code
+
+POST /api/payments/enterprise/checkout/
+  - Enterprise volume checkout
+  - Params: tier, quantity, customer_email, organization_name
+
+GET /api/payments/enterprise/pricing/
+  - Get enterprise pricing info
+  - Query: tier, quantity
+
+GET /api/payments/affiliate/verify/
+  - Verify affiliate code
+  - Query: code
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# API base URL (defaults to production)
+NEXT_PUBLIC_API_URL=https://api.ersimulator.com
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Run development server
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Build for production
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 16
+- React 19
+- Tailwind CSS
+- TypeScript

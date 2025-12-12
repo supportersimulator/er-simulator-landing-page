@@ -25,6 +25,9 @@ export function Footer() {
           <Link href="/pricing" className="hover:text-slate-200">
             Pricing
           </Link>
+          <Link href="/enterprise" className="hover:text-slate-200">
+            Enterprise
+          </Link>
           <Link href="/terms" className="hover:text-slate-200">
             Terms of service
           </Link>

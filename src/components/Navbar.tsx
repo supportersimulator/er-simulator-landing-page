@@ -32,11 +32,14 @@ export function Navbar() {
           <Link href="/pricing" className="text-slate-300 hover:text-white">
             Pricing
           </Link>
+          <Link href="/enterprise" className="text-slate-300 hover:text-white">
+            Enterprise
+          </Link>
           <Link
             href="#who-its-for"
             className="text-slate-300 hover:text-white"
           >
-            Who it’s for
+            Who it's for
           </Link>
         </div>
 
@@ -91,11 +94,18 @@ export function Navbar() {
               Pricing
             </Link>
             <Link
+              href="/enterprise"
+              className="text-slate-200"
+              onClick={() => setOpen(false)}
+            >
+              Enterprise
+            </Link>
+            <Link
               href="#who-its-for"
               className="text-slate-200"
               onClick={() => setOpen(false)}
             >
-              Who it’s for
+              Who it's for
             </Link>
             <Link
               href="/pricing"
