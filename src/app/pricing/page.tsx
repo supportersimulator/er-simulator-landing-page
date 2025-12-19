@@ -6,6 +6,10 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 type BillingPeriod = "monthly" | "yearly";
+type Region = "us" | "international" | null;
+
+// Lemon Squeezy checkout URL for international users
+const LEMON_SQUEEZY_URL = "https://get.ersimulator.com";
 
 // Plan configurations matching backend payments/config.py
 const PLANS = [
@@ -65,11 +69,23 @@ export default function PricingPage() {
   const [selectedPlan, setSelectedPlan] = useState<string>("core");
   const [isLoading, setIsLoading] = useState<string | null>(null);
   const [affiliateCode, setAffiliateCode] = useState<string | null>(null);
+  const [userRegion, setUserRegion] = useState<Region>(null);
   const isYearly = billingPeriod === "yearly";
 
-  // Check for affiliate code in URL on mount
+  // Detect user region and check for affiliate code on mount
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
+
+    // Check if redirected from Lemon Squeezy (US user)
+    const regionParam = params.get("region");
+    if (regionParam === "us") {
+      setUserRegion("us");
+    } else {
+      // Detect region via IP geolocation
+      detectUserRegion();
+    }
+
+    // Check for affiliate code
     const ref = params.get("ref") || params.get("via") || params.get("affiliate");
     if (ref) {
       setAffiliateCode(ref);
@@ -84,6 +100,23 @@ export default function PricingPage() {
     }
   }, []);
 
+  // Detect user region using free IP geolocation API
+  const detectUserRegion = async () => {
+    try {
+      // Use Cloudflare's free geo detection via their trace endpoint
+      const res = await fetch("https://www.cloudflare.com/cdn-cgi/trace");
+      const text = await res.text();
+      const countryMatch = text.match(/loc=(\w+)/);
+      if (countryMatch) {
+        const country = countryMatch[1];
+        setUserRegion(country === "US" ? "us" : "international");
+      }
+    } catch {
+      // Default to US if detection fails (most users)
+      setUserRegion("us");
+    }
+  };
+
   const formatPrice = (plan: typeof PLANS[number]) => {
     const value = isYearly ? plan.priceYearly : plan.priceMonthly;
     return value;
@@ -93,6 +126,23 @@ export default function PricingPage() {
     setIsLoading(planId);
 
     try {
+      // Route based on user region:
+      // - US users -> Stripe (lower fees)
+      // - International users -> Lemon Squeezy (handles VAT/GST)
+      if (userRegion === "international") {
+        // Redirect to Lemon Squeezy checkout
+        // The plan and billing period are passed as URL params
+        const lsUrl = new URL(LEMON_SQUEEZY_URL);
+        lsUrl.searchParams.set("plan", planId);
+        lsUrl.searchParams.set("billing", isYearly ? "annual" : "monthly");
+        if (affiliateCode) {
+          lsUrl.searchParams.set("affiliate", affiliateCode);
+        }
+        window.location.href = lsUrl.toString();
+        return;
+      }
+
+      // US users -> Stripe checkout
       const res = await fetch(`${API_BASE_URL}/api/payments/checkout/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
