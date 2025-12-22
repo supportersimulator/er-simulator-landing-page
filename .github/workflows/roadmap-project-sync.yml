@@ -45,13 +45,18 @@ jobs:
               return;
             }
 
-            // Determine desired Status.
-            let desiredStatus = 'Backlog';
+            // Determine desired statuses:
+            // - Roadmap Status: rich lifecycle (Backlog/Planned/In Review/etc.)
+            // - Built-in Status: Todo/In Progress/Done (for simple GitHub board views)
+            let desiredRoadmapStatus = 'Backlog';
+            let desiredBuiltInStatus = 'Todo';
             if (isPR) {
               if (action === 'closed') {
-                desiredStatus = pr.merged ? 'Done' : 'Backlog';
+                desiredRoadmapStatus = pr.merged ? 'Done' : 'Backlog';
+                desiredBuiltInStatus = pr.merged ? 'Done' : 'Todo';
               } else {
-                desiredStatus = pr.draft ? 'In Progress' : 'In Review';
+                desiredRoadmapStatus = pr.draft ? 'In Progress' : 'In Review';
+                desiredBuiltInStatus = 'In Progress';
               }
             }
 
@@ -120,7 +125,8 @@ jobs:
                 return;
               }
 
-              const m = `mutation($projectId:ID!,$itemId:ID!,$fieldId:ID!,$optionId:ID!){
+              // GitHub treats single-select option IDs as strings (not node IDs).
+              const m = `mutation($projectId:ID!,$itemId:ID!,$fieldId:ID!,$optionId:String!){
                 updateProjectV2ItemFieldValue(input:{projectId:$projectId,itemId:$itemId,fieldId:$fieldId,value:{singleSelectOptionId:$optionId}}){
                   projectV2Item { id }
                 }
@@ -139,9 +145,13 @@ jobs:
               core.info(`Already in project: itemId=${itemId}`);
             }
 
-            // Always keep Status aligned with PR lifecycle / issue backlog.
-            await setSingleSelect(itemId, 'Status', desiredStatus);
-            core.info(`Set Status → ${desiredStatus}`);
+            // Always keep Roadmap Status aligned with PR lifecycle / issue backlog.
+            await setSingleSelect(itemId, 'Roadmap Status', desiredRoadmapStatus);
+            core.info(`Set Roadmap Status → ${desiredRoadmapStatus}`);
+
+            // Also keep GitHub's built-in Status aligned (Todo/In Progress/Done).
+            await setSingleSelect(itemId, 'Status', desiredBuiltInStatus);
+            core.info(`Set Status → ${desiredBuiltInStatus}`);
 
             // Set defaults only on first add (doesn't override later manual edits).
             if (created) {
