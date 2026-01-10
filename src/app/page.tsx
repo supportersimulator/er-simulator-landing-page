@@ -1,6 +1,5 @@
 // src/app/page.tsx
 import Link from "next/link";
-import type { ReactNode } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
@@ -29,19 +28,11 @@ export default function HomePage() {
             </h1>
 
             <p className="max-w-xl text-base text-slate-300 sm:text-lg">
-              ER Simulator is an AI voice-to-voice practice partner for building confidence
-              before your next simulation experience—not for actual patient care decisions.
-              Speak naturally, and fictional AI characters respond back in real time. It's
-              designed for physicians, PAs, NPs, and residents who want more reps between
-              shifts—supplementing formal sim lab training and oral board prep with safe,
-              fictional practice scenarios.
-            </p>
-            <p className="max-w-2xl text-xs text-slate-400">
-              ER Simulator is for informal educational experiences only and is not a
-              substitute for formal medical training or professional advice. By
-              participating you agree to stay within your licensed scope, follow local
-              hospital protocols, and comply with all applicable laws and governing
-              bodies before making patient-care decisions.
+              ER Simulator is an AI practice partner for building confidence before your
+              next real simulation experience—not for patient care decisions. Speak naturally,
+              and AI characters respond in real time. Designed for physicians, PAs, NPs, and
+              residents who want more reps between shifts, supplementing formal sim lab
+              training and oral board prep.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -49,21 +40,18 @@ export default function HomePage() {
                 href="/pricing"
                 className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-500/30 hover:bg-emerald-400"
               >
-                Join clinician waitlist — educational use only
+                Join the waitlist
               </Link>
               <Link
                 href="#how-it-works"
                 className="inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-2.5 text-sm font-medium text-slate-100 hover:border-slate-500"
               >
-                See how simulations work
+                See how it works
               </Link>
             </div>
 
               <p className="text-xs text-slate-500">
-                No credit card required during early access. Not for real patient
-                use. Always defer to your supervising team, accrediting bodies
-                (AMA, ACEP, NCCPA, ANCC, etc.), and local laws before acting on
-                anything you practice here.
+                No credit card required during early access.
               </p>
           </div>
 
@@ -126,23 +114,22 @@ export default function HomePage() {
               Build confidence for your next sim lab experience.
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-slate-400">
-              ER Simulator creates a safe space to rehearse clinical communication
-              and build confidence—all through clearly fictional practice scenarios
-              that supplement your formal training.
+              Rehearse clinical communication and build confidence through practice
+              scenarios that supplement your formal training.
             </p>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <FeatureCard
-                title="Voice-to-voice practice encounters"
-                description="Speak naturally and practice clinical communication with fictional AI characters. Build confidence for sim lab and oral board prep through repetition."
+                title="Voice-to-voice practice"
+                description="Speak naturally and practice clinical communication with AI characters. Build confidence for sim lab and oral boards through repetition."
               />
               <FeatureCard
                 title="Dynamic vitals & monitor"
-                description="See how the simulated monitor responds to your practice decisions—building familiarity before your next formal simulation experience."
+                description="Watch the simulated monitor respond to your decisions—building familiarity before your next formal simulation."
               />
               <FeatureCard
-                title="Case library for confidence-building"
-                description="Practice with high-yield EM scenarios designed to build familiarity and confidence—not for actual patient care decisions."
+                title="High-yield EM case library"
+                description="Practice with scenarios designed to build familiarity and confidence through repetition."
               />
             </div>
           </div>
@@ -153,43 +140,37 @@ export default function HomePage() {
           <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center md:py-16">
             <div className="flex-1 space-y-4">
               <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-                Practice conversations that build confidence
+                Realtime voice conversations
               </h2>
               <p className="text-sm text-slate-300">
-                Speak naturally to fictional AI characters and hear responses instantly.
-                The practice environment helps you rehearse structured communication
-                patterns through repetition—building familiarity and confidence in a
-                safe, controlled setting.
+                Speak naturally and hear responses instantly. The practice environment
+                helps you rehearse structured communication patterns through repetition.
               </p>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Multiple
-                  fictional character voices create an immersive practice environment.
-                </li>
-                <li>
-                  <span className="font-semibold text-emerald-300">•</span> All dialogue
-                  is AI-generated and clearly fictional—never real advice or guidance.
+                  character voices create an immersive practice environment.
                 </li>
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Practice anywhere
                   on your laptop, tablet, or phone—no special equipment needed.
                 </li>
+                <li>
+                  <span className="font-semibold text-emerald-300">•</span> Review transcripts
+                  and share with mentors for feedback.
+                </li>
               </ul>
             </div>
             <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-2xl shadow-black/40">
               <h3 className="text-base font-semibold text-emerald-300">
-                Gain confidence for your next simulation experience
+                How a practice session works
               </h3>
               <ol className="mt-4 space-y-3 text-slate-300">
-                <li>1. Speak naturally into your microphone to practice conversations.</li>
-                <li>2. The fictional characters respond instantly through AI-generated dialogue.</li>
-                <li>3. Build familiarity with structured communication through repetition.</li>
-                <li>4. Review your practice sessions to track your confidence growth.</li>
+                <li>1. Speak naturally into your microphone.</li>
+                <li>2. AI characters respond instantly with voice.</li>
+                <li>3. Build familiarity through repetition.</li>
+                <li>4. Review sessions to track your progress.</li>
               </ol>
-              <p className="mt-4 text-xs text-slate-500">
-                Note: All content is AI-generated fiction for confidence-building only.
-                This is supplemental to formal accredited training programs.
-              </p>
             </div>
           </div>
         </section>
@@ -207,18 +188,18 @@ export default function HomePage() {
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <StepCard
                 step="1"
-                title="Choose a practice scenario"
-                text="Select from a variety of fictional scenarios designed for confidence-building through repetition."
+                title="Choose a scenario"
+                text="Select from EM cases designed for oral board prep and sim lab practice."
               />
               <StepCard
                 step="2"
                 title="Practice through conversation"
-                text="Speak naturally with AI-generated fictional characters. Build familiarity with structured communication patterns."
+                text="Speak naturally with AI characters. Build familiarity with structured communication."
               />
               <StepCard
                 step="3"
-                title="Review & build confidence"
-                text="Track your practice sessions and see your confidence grow over time. Use insights to guide your formal training."
+                title="Review & improve"
+                text="Track your sessions and share transcripts with mentors for feedback."
               />
             </div>
           </div>
@@ -229,80 +210,38 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
             <div className="space-y-4">
               <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-                Build confidence before oral boards & sim lab
+                Prep for oral boards & sim lab
               </h2>
               <p className="text-sm text-slate-300">
-                Oral boards and sim lab assessments require clear verbal communication under pressure.
-                ER Simulator helps you build confidence through practice conversations
-                that supplement your formal board prep and simulation training—not replace it.
+                Oral boards and sim lab require clear verbal communication under pressure.
+                Build confidence through practice conversations that supplement your formal
+                board prep and simulation training.
               </p>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Practice
-                  verbalizing clinical reasoning through fictional role-play scenarios.
+                  verbalizing clinical reasoning through role-play scenarios.
                 </li>
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Build familiarity
-                  with structured presentations through repetition before your formal assessments.
+                  with structured presentations through repetition.
                 </li>
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Share session logs
-                  with mentors to get feedback on your communication approach.
+                  with mentors for feedback.
                 </li>
               </ul>
             </div>
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-xl shadow-black/40">
               <h3 className="text-base font-semibold text-emerald-300">
-                Oral board confidence checklist
+                Practice checklist
               </h3>
               <ul className="mt-4 space-y-3 text-slate-300">
-                <li>☑️ Practice verbalizing clinical reasoning in fictional scenarios.</li>
-                <li>☑️ Build familiarity with structured case presentations through repetition.</li>
-                <li>☑️ Gain confidence speaking aloud before your formal sim lab sessions.</li>
-                <li>☑️ Review sessions to track your communication improvement.</li>
+                <li>☑️ Practice verbalizing clinical reasoning.</li>
+                <li>☑️ Build familiarity with structured case presentations.</li>
+                <li>☑️ Gain confidence speaking aloud before formal sim lab.</li>
+                <li>☑️ Review sessions to track improvement.</li>
               </ul>
-              <p className="mt-4 text-xs text-slate-500">
-                Reminder: This is supplemental confidence-building only. Always rely on your formal
-                board prep courses and accredited programs for official preparation.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Responsible use */}
-        <section className="border-t border-slate-900 bg-slate-950/70">
-          <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:py-16 md:flex-row">
-            <div className="flex-1">
-              <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-                How to use ER Simulator responsibly
-              </h2>
-              <p className="mt-3 text-sm text-slate-400">
-                Think of ER Simulator as a study buddy: it encourages you to review
-                clinical frameworks but never replaces formal education, credentialing,
-                or CME. You remain solely responsible for your practice decisions.
-              </p>
-            </div>
-            <div className="flex-1 space-y-3 text-sm text-slate-300">
-              <Bullet>
-                Not medical advice. This platform does not diagnose, treat, or
-                prescribe. For authoritative instruction, follow your medical school,
-                residency, or recognized associations (AMA, ACOEP, NCCPA, AANP, etc.).
-              </Bullet>
-              <Bullet>
-                Stay within scope. Only licensed clinicians may use ER Simulator.
-                You must adhere to your licensure requirements, supervising physicians,
-                and institutional protocols at all times.
-              </Bullet>
-              <Bullet>
-                Follow local law & policy. We provide no legal counsel. Consult your
-                hospital, EMS agency, or legal advisors for documentation, billing,
-                or regulatory questions.
-              </Bullet>
-              <Bullet>
-                Fictional scenarios only. Never use ER Simulator to manage real patients.
-                Translate lessons into practice only through approved pathways such as
-                residency conferences, CME, or hospital simulations.
-              </Bullet>
             </div>
           </div>
         </section>
@@ -386,24 +325,12 @@ export default function HomePage() {
 
         {/* Disclaimers */}
         <section className="border-t border-slate-900 bg-slate-950/50">
-          <div className="mx-auto max-w-4xl px-4 py-12 text-sm text-slate-300">
-            <h2 className="text-lg font-semibold text-slate-50">Disclaimers</h2>
-            <p className="mt-4">
-              By using ER Simulator, you agree not to interpret any content as medical
-              advice for treating yourself or others, including but not limited to patients
-              under your care. Always consult your own physician, supervising team, or
-              governing medical association for personal or patient-specific guidance. This
-              disclaimer applies to all contributors and guests. Under no circumstances
-              shall Tjomsland LLC dba ER Simulator or its contributors be responsible for
-              damages arising from use of the platform.
-            </p>
-            <p className="mt-4 text-slate-400">
-              Furthermore, ER Simulator must not be used in any legal capacity whatsoever,
-              including but not limited to establishing “standard of care,” supporting
-              expert testimony, or serving as documentation for clinical decisions. No
-              guarantee is provided regarding the accuracy or completeness of statements
-              made within the simulation. Always perform independent verification through
-              formal education, CME, and local hospital protocols.
+          <div className="mx-auto max-w-4xl px-4 py-10 text-xs text-slate-400">
+            <p>
+              ER Simulator is an educational simulation tool for licensed clinicians only.
+              It does not provide medical, legal, or practice advice. Always follow your
+              formal training, supervising teams, local laws, and hospital protocols before
+              making real patient decisions. © {new Date().getFullYear()} Tjomsland LLC dba ER Simulator.
             </p>
           </div>
         </section>
@@ -414,14 +341,6 @@ export default function HomePage() {
   );
 }
 
-function Bullet({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex gap-3">
-      <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-400" />
-      <p>{children}</p>
-    </div>
-  );
-}
 function FeatureCard({
   title,
   description,
