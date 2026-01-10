@@ -23,19 +23,18 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-balance text-2xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-[2.75rem] lg:leading-snug">
-              Emergency medicine simulations with{" "}
-              <span className="text-emerald-400">AI voice-responsive patients</span>{" "}
+              Build confidence through{" "}
+              <span className="text-emerald-400">voice-driven practice simulations</span>{" "}
               that feel like your own mobile sim lab.
             </h1>
 
             <p className="max-w-xl text-base text-slate-300 sm:text-lg">
-              ER Simulator is an AI voice-to-voice rehearsal partner: you speak,
-              the simulated patient or facilitator answers back, and the monitor
-              reacts in real time. It’s built for physicians, PAs, NPs, and
-              residents with formal training—especially anyone prepping for EM
-              oral boards, mock codes, or complex consults who just wants more
-              reps between shifts, similar to Rosh Review, OnlineMedEd, or FOAMed
-              cases.
+              ER Simulator is a fictional role-play environment where you practice
+              verbal communication skills through AI-generated dialogue. Speak naturally,
+              and the simulated characters respond back in real time. It's designed
+              for licensed professionals who want to build confidence through repetition
+              in a safe, controlled practice environment—supplementing formal accredited
+              training programs.
             </p>
             <p className="max-w-2xl text-xs text-slate-400">
               ER Simulator is for informal educational experiences only and is not a
@@ -124,25 +123,25 @@ export default function HomePage() {
         >
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-              Built to sharpen your emergency department thinking.
+              Practice structured thinking through fictional scenarios.
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-slate-400">
-              ER Simulator is being designed to mirror how you actually think,
-              talk, and move in the ED—minus the 3 a.m. pager.
+              ER Simulator creates a safe space to rehearse verbal communication
+              and build confidence—all through clearly fictional role-play simulations.
             </p>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <FeatureCard
-                title="Voice-to-voice, mock interactive encounters"
-                description="Use natural language to take a brief history, get exam insights, give orders, and formulate your plan. Our AI voice-to-voice simulation keeps the patient talking back instantly—just like a bedside drill."
+                title="Voice-driven practice conversations"
+                description="Speak naturally and practice verbal communication with AI-generated fictional characters. Build confidence through repetition in a safe, controlled environment."
               />
               <FeatureCard
-                title="Dynamic vitals & monitor"
-                description="Watch the rhythm, pressure, SpO₂, and more respond in real-time to your interventions—or to delays."
+                title="Interactive visual feedback"
+                description="See how the simulated environment responds to your practice decisions—helping you build familiarity with structured thinking patterns."
               />
               <FeatureCard
-                title="Case library you’ll actually remember"
-                description="High-yield EM cases built around pattern recognition, cognitive traps, and debriefs so the learning sticks."
+                title="Fictional scenario library"
+                description="Practice with a variety of educational scenarios designed to build confidence and familiarity through repetition."
               />
             </div>
           </div>
@@ -153,44 +152,42 @@ export default function HomePage() {
           <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-12 md:flex-row md:items-center md:py-16">
             <div className="flex-1 space-y-4">
               <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-                Realtime voice simulation built for clinicians
+                Practice conversations that build confidence
               </h2>
               <p className="text-sm text-slate-300">
-                Talk to the AI patient like you would in the trauma bay and hear the answer
-                within a heartbeat. The facilitator voice keeps you honest, nudging vitals,
-                asking “anything else?” and mirroring the on-shift pressure—without scripted
-                menus or tech tinkering.
+                Speak naturally to fictional AI characters and hear responses instantly.
+                The practice environment helps you rehearse structured communication
+                patterns through repetition—building familiarity and confidence in a
+                safe, controlled setting.
               </p>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
-                  <span className="font-semibold text-emerald-300">•</span> Dual voice
-                  sessions (patient + facilitator) mimic the patient encounter and charge
-                  nurse coaching at the same time.
+                  <span className="font-semibold text-emerald-300">•</span> Multiple
+                  fictional character voices create an immersive practice environment.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-300">•</span> Every reply
-                  references the scenario roadmap yet stays clearly fictional, honoring our
-                  “not medical advice” promise.
+                  <span className="font-semibold text-emerald-300">•</span> All dialogue
+                  is AI-generated and clearly fictional—never real advice or guidance.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-300">•</span> Runs on your
-                  laptop, tablet, or phone—no sim lab crew, mannequins, or setup windows.
+                  <span className="font-semibold text-emerald-300">•</span> Practice anywhere
+                  on your laptop, tablet, or phone—no special equipment needed.
                 </li>
               </ul>
             </div>
             <div className="flex-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-2xl shadow-black/40">
               <h3 className="text-base font-semibold text-emerald-300">
-                What the AI voice-to-voice flow feels like
+                Gain confidence for your next simulation experience
               </h3>
               <ol className="mt-4 space-y-3 text-slate-300">
-                <li>1. You speak orders, questions, or reassessments into your mic.</li>
-                <li>2. The simulator listens instantly and keeps pace with your train of thought.</li>
-                <li>3. Patient, nurse, and facilitator voices answer with natural tone and urgency.</li>
-                <li>4. The monitor shifts accordingly, and each turn is saved for coaching or oral board review.</li>
+                <li>1. Speak naturally into your microphone to practice conversations.</li>
+                <li>2. The fictional characters respond instantly through AI-generated dialogue.</li>
+                <li>3. Build familiarity with structured communication through repetition.</li>
+                <li>4. Review your practice sessions to track your confidence growth.</li>
               </ol>
               <p className="mt-4 text-xs text-slate-500">
-                Note: All content remains fictional and educational. Users must follow their
-                licensing, local laws, and hospital protocols before translating any insights.
+                Note: All content is AI-generated fiction for confidence-building only.
+                This is supplemental to formal accredited training programs.
               </p>
             </div>
           </div>
@@ -209,18 +206,18 @@ export default function HomePage() {
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <StepCard
                 step="1"
-                title="Pick a case & acuity"
-                text="Choose from chest pain, dyspnea, trauma, OB, peds, and more. Dial the chaos up or down."
+                title="Choose a practice scenario"
+                text="Select from a variety of fictional scenarios designed for confidence-building through repetition."
               />
               <StepCard
                 step="2"
-                title="Talk & practice in real time"
-                text="Speak to the simulated patient and nurse, get exam insights, give orders, and shape your plan—fictional practice only, never for real patients."
+                title="Practice through conversation"
+                text="Speak naturally with AI-generated fictional characters. Build familiarity with structured communication patterns."
               />
               <StepCard
                 step="3"
-                title="Debrief & grow"
-                text="See what went well, what was missed, and then reinforce the topic through official oral board prep, CME, or your hospital simulation program."
+                title="Review & build confidence"
+                text="Track your practice sessions and see your confidence grow over time. Use insights to guide your formal training."
               />
             </div>
           </div>
@@ -231,44 +228,41 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
             <div className="space-y-4">
               <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-                Designed for Emergency Medicine oral board prep
+                Build confidence before formal assessments
               </h2>
               <p className="text-sm text-slate-300">
-                Oral boards require rapid synthesis, clear communication, and the ability to
-                verbalize next steps under pressure. ER Simulator lets you rehearse those
-                skills in realistic voice-driven cases, then cross-check with your program’s
-                rubric or attending feedback.
+                Professional assessments require clear verbal communication under pressure.
+                ER Simulator helps you build confidence through practice conversations,
+                then apply those skills in your formal accredited training programs.
               </p>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Practice
-                  explaining differential diagnoses, orders, and reassessments aloud—the same
-                  cadence you’ll use during oral boards.
+                  verbalizing structured thinking patterns through fictional role-play.
                 </li>
                 <li>
-                  <span className="font-semibold text-emerald-300">•</span> Use fictional
-                  patients to sharpen pattern recognition (sepsis, ACS, pediatric resus) without
-                  ever touching real patient care decisions.
+                  <span className="font-semibold text-emerald-300">•</span> Build familiarity
+                  and confidence through repetition in a safe, controlled environment.
                 </li>
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Share session logs
-                  with mentors or coaches to get coaching on structure, not answers.
+                  with mentors to get feedback on communication structure.
                 </li>
               </ul>
             </div>
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-xl shadow-black/40">
               <h3 className="text-base font-semibold text-emerald-300">
-                Oral board rehearsal checklist
+                Confidence-building practice checklist
               </h3>
               <ul className="mt-4 space-y-3 text-slate-300">
-                <li>☑️ State the chief complaint and sick/not-sick status clearly.</li>
-                <li>☑️ Call out immediate interventions (ABCs, monitors, access) verbally.</li>
-                <li>☑️ Explain differential and critical actions while the AI patient responds.</li>
-                <li>☑️ Summarize plan and next reassessment before ending the encounter.</li>
+                <li>☑️ Practice clear verbal communication in fictional scenarios.</li>
+                <li>☑️ Build familiarity with structured thinking through repetition.</li>
+                <li>☑️ Gain confidence speaking aloud in simulated environments.</li>
+                <li>☑️ Review sessions to track your communication improvement.</li>
               </ul>
               <p className="mt-4 text-xs text-slate-500">
-                Reminder: This is supplemental practice only. Always rely on your oral board
-                curriculum, program directors, and accrediting bodies for official preparation.
+                Reminder: This is supplemental practice only. Always rely on your formal
+                accredited training programs for official preparation and guidance.
               </p>
             </div>
           </div>
@@ -341,34 +335,34 @@ export default function HomePage() {
         >
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-              Designed for busy EM clinicians.
+              Designed for busy professionals seeking confidence.
             </h2>
             <div className="mt-6 grid gap-4 text-sm text-slate-300 md:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
                 <h3 className="font-semibold text-slate-100">
-                  PAs & NPs in the ED
+                  Licensed professionals
                 </h3>
                 <p className="mt-2 text-slate-400">
-                  Stay sharp between shifts, prep for new roles, or keep your
-                  pattern recognition tuned for rare but critical cases.
+                  Build confidence through practice conversations between
+                  formal training sessions.
                 </p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
                 <h3 className="font-semibold text-slate-100">
-                  Residents & students
+                  Students in training
                 </h3>
                 <p className="mt-2 text-slate-400">
-                  Get more safe reps in high-stakes scenarios before they show
-                  up in your department at 2 a.m.
+                  Gain familiarity with structured communication through
+                  safe, fictional practice scenarios.
                 </p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
                 <h3 className="font-semibold text-slate-100">
-                  Simulation programs
+                  Training programs
                 </h3>
                 <p className="mt-2 text-slate-400">
-                  Extend your sim lab with remote, AI-assisted cases that
-                  integrate vitals, voice, and debrief.
+                  Supplement your formal curriculum with additional practice
+                  opportunities for confidence-building.
                 </p>
               </div>
             </div>
