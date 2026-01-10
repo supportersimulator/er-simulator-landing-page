@@ -23,18 +23,18 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-balance text-2xl font-semibold tracking-tight text-slate-50 sm:text-4xl lg:text-[2.75rem] lg:leading-snug">
-              Build confidence through{" "}
-              <span className="text-emerald-400">voice-driven practice simulations</span>{" "}
+              Build confidence for medical simulations with{" "}
+              <span className="text-emerald-400">AI voice-responsive practice scenarios</span>{" "}
               that feel like your own mobile sim lab.
             </h1>
 
             <p className="max-w-xl text-base text-slate-300 sm:text-lg">
-              ER Simulator is a fictional role-play environment where you practice
-              verbal communication skills through AI-generated dialogue. Speak naturally,
-              and the simulated characters respond back in real time. It's designed
-              for licensed professionals who want to build confidence through repetition
-              in a safe, controlled practice environment—supplementing formal accredited
-              training programs.
+              ER Simulator is an AI voice-to-voice practice partner for building confidence
+              before your next simulation experience—not for actual patient care decisions.
+              Speak naturally, and fictional AI characters respond back in real time. It's
+              designed for physicians, PAs, NPs, and residents who want more reps between
+              shifts—supplementing formal sim lab training and oral board prep with safe,
+              fictional practice scenarios.
             </p>
             <p className="max-w-2xl text-xs text-slate-400">
               ER Simulator is for informal educational experiences only and is not a
@@ -123,25 +123,26 @@ export default function HomePage() {
         >
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-              Practice structured thinking through fictional scenarios.
+              Build confidence for your next sim lab experience.
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-slate-400">
-              ER Simulator creates a safe space to rehearse verbal communication
-              and build confidence—all through clearly fictional role-play simulations.
+              ER Simulator creates a safe space to rehearse clinical communication
+              and build confidence—all through clearly fictional practice scenarios
+              that supplement your formal training.
             </p>
 
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               <FeatureCard
-                title="Voice-driven practice conversations"
-                description="Speak naturally and practice verbal communication with AI-generated fictional characters. Build confidence through repetition in a safe, controlled environment."
+                title="Voice-to-voice practice encounters"
+                description="Speak naturally and practice clinical communication with fictional AI characters. Build confidence for sim lab and oral board prep through repetition."
               />
               <FeatureCard
-                title="Interactive visual feedback"
-                description="See how the simulated environment responds to your practice decisions—helping you build familiarity with structured thinking patterns."
+                title="Dynamic vitals & monitor"
+                description="See how the simulated monitor responds to your practice decisions—building familiarity before your next formal simulation experience."
               />
               <FeatureCard
-                title="Fictional scenario library"
-                description="Practice with a variety of educational scenarios designed to build confidence and familiarity through repetition."
+                title="Case library for confidence-building"
+                description="Practice with high-yield EM scenarios designed to build familiarity and confidence—not for actual patient care decisions."
               />
             </div>
           </div>
@@ -228,41 +229,41 @@ export default function HomePage() {
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 md:grid-cols-2 md:py-16">
             <div className="space-y-4">
               <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-                Build confidence before formal assessments
+                Build confidence before oral boards & sim lab
               </h2>
               <p className="text-sm text-slate-300">
-                Professional assessments require clear verbal communication under pressure.
-                ER Simulator helps you build confidence through practice conversations,
-                then apply those skills in your formal accredited training programs.
+                Oral boards and sim lab assessments require clear verbal communication under pressure.
+                ER Simulator helps you build confidence through practice conversations
+                that supplement your formal board prep and simulation training—not replace it.
               </p>
               <ul className="space-y-2 text-sm text-slate-300">
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Practice
-                  verbalizing structured thinking patterns through fictional role-play.
+                  verbalizing clinical reasoning through fictional role-play scenarios.
                 </li>
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Build familiarity
-                  and confidence through repetition in a safe, controlled environment.
+                  with structured presentations through repetition before your formal assessments.
                 </li>
                 <li>
                   <span className="font-semibold text-emerald-300">•</span> Share session logs
-                  with mentors to get feedback on communication structure.
+                  with mentors to get feedback on your communication approach.
                 </li>
               </ul>
             </div>
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 text-sm text-slate-200 shadow-xl shadow-black/40">
               <h3 className="text-base font-semibold text-emerald-300">
-                Confidence-building practice checklist
+                Oral board confidence checklist
               </h3>
               <ul className="mt-4 space-y-3 text-slate-300">
-                <li>☑️ Practice clear verbal communication in fictional scenarios.</li>
-                <li>☑️ Build familiarity with structured thinking through repetition.</li>
-                <li>☑️ Gain confidence speaking aloud in simulated environments.</li>
+                <li>☑️ Practice verbalizing clinical reasoning in fictional scenarios.</li>
+                <li>☑️ Build familiarity with structured case presentations through repetition.</li>
+                <li>☑️ Gain confidence speaking aloud before your formal sim lab sessions.</li>
                 <li>☑️ Review sessions to track your communication improvement.</li>
               </ul>
               <p className="mt-4 text-xs text-slate-500">
-                Reminder: This is supplemental practice only. Always rely on your formal
-                accredited training programs for official preparation and guidance.
+                Reminder: This is supplemental confidence-building only. Always rely on your formal
+                board prep courses and accredited programs for official preparation.
               </p>
             </div>
           </div>
@@ -328,41 +329,41 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Who it’s for */}
+        {/* Who it's for */}
         <section
           id="who-its-for"
           className="border-t border-slate-800 bg-slate-950/80"
         >
           <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
             <h2 className="text-xl font-semibold text-slate-50 md:text-2xl">
-              Designed for busy professionals seeking confidence.
+              Designed for busy clinicians seeking confidence before their next simulation.
             </h2>
             <div className="mt-6 grid gap-4 text-sm text-slate-300 md:grid-cols-3">
               <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
                 <h3 className="font-semibold text-slate-100">
-                  Licensed professionals
+                  EM physicians & APPs
                 </h3>
                 <p className="mt-2 text-slate-400">
-                  Build confidence through practice conversations between
-                  formal training sessions.
+                  Physicians, PAs, and NPs building confidence through practice
+                  conversations between shifts and formal training sessions.
                 </p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
                 <h3 className="font-semibold text-slate-100">
-                  Students in training
+                  Residents & students
                 </h3>
                 <p className="mt-2 text-slate-400">
-                  Gain familiarity with structured communication through
-                  safe, fictional practice scenarios.
+                  Gain familiarity with structured clinical communication through
+                  safe, fictional practice scenarios before sim lab.
                 </p>
               </div>
               <div className="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
                 <h3 className="font-semibold text-slate-100">
-                  Training programs
+                  Residency programs
                 </h3>
                 <p className="mt-2 text-slate-400">
-                  Supplement your formal curriculum with additional practice
-                  opportunities for confidence-building.
+                  Supplement your formal simulation curriculum with additional practice
+                  opportunities for confidence-building between sessions.
                 </p>
               </div>
             </div>
